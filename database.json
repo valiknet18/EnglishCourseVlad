@@ -1,0 +1,97 @@
+{
+    "users": [
+      "0": {
+          "name": "Vlad",
+          "surname": "Polynko",
+          "role": "student",
+          "score": "",
+          "courses": [
+            {
+                "courseId": "",
+                "progress": "",
+                "score": ""
+            },
+            {
+                "courseId": "",
+                "progress": "",
+                "score": ""
+            }
+          ]
+      },
+      "1": {
+          "name": "Valik",
+          "surname": "Hrinevich",
+          "role": "teacher"
+      },
+      "2": {
+          "name": "Vasya",
+          "surname": "Pupkin",
+          "role": "admin"
+      }
+    ],
+    "courses": [
+        "0": {
+            "name": "Course name",
+            "dependFrom": "",
+            "level": "",
+            "lessons": [
+                "0": {
+                    "type": "video",
+                    "video": "urlToYoutube"
+                },
+                "1": {
+                    "type": "text",
+                    "text": "Lorem ipsum"
+                },
+                "2": {
+                    "type": "audio",
+                    "audio": "url"
+                }
+            ],
+            "tests": [
+                "0": {
+                    "type": "writeAnswer",
+                    "question": "",
+                    "correctAnswer": ""
+                },
+                "1": {
+                   "type": "chooseCorrectVariant",
+                   "question": "",
+                   "answers": [
+                      {
+                        "correct": 0,
+                        "answer": ""
+                      },
+                      {
+                        "corrrect": 1,
+                        "answer": ""
+                      }
+                   ]
+                },
+                "2": {
+                    "type": "chooseCorrectVariants",
+                    "question": "",
+                    "answers": [
+                       {
+                         "correct": 0,
+                         "answer": ""
+                       },
+                       {
+                         "corrrect": 1,
+                         "answer": ""
+                       },
+                       {
+                         "corrrect": 1,
+                         "answer": ""
+                       }
+                    ]
+                }
+            ]
+        }
+        "1": {
+          "name": "Course name 2",
+          "dependFrom": "1",
+          "level": ""
+        }
+    ]
+}
