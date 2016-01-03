@@ -7,34 +7,38 @@ import (
 	mgo "gopkg.in/mgo.v2"
 )
 
+type Models struct {
+		Connect *mgo.Session
+}
+
 type database struct {
-	host     string
-	database string
-	username string
-	password string
-	port     string
+		host     string
+		database string
+		username string
+		password string
+		port     string
 }
 
 var databaseConfig database
 
-func Init() (*mgo.Session, error) {
-	file, err := ioutil.ReadFile("../config/database.json")
+func (m *Models) Init() {
+		file, err := ioutil.ReadFile("../config/database.json")
 
-	if err != nil {
-		panic(err)
-	}
+		if err != nil {
+			panic(err)
+		}
 
-	var databaseConfig database
+		var databaseConfig database
 
-	err = json.Unmarshal(file, databaseConfig)
+		err = json.Unmarshal(file, databaseConfig)
 
-	session, err := mgo.Dial(databaseConfig.host)
+		session, err := mgo.Dial(databaseConfig.host)
 
-	if err != nil {
-		panic(err)
-	}
+		defer session.Close()
 
-	session.DB(databaseConfig.database)
+		if err != nil {
+			panic(err)
+		}
 
-	return session, nil
+		m.Connect = session.DB(databaseConfig.database)
 }

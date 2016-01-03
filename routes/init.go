@@ -10,6 +10,7 @@ func Init() http.Handler {
 	controllersMap := controllers.New()
 	router := httprouter.New()
 	router.GET("/api/users/", controllersMap.UsersController.Index)
+	
 
 	return router
 }

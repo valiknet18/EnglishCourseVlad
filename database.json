@@ -37,15 +37,15 @@
             "lessons": [
                 "0": {
                     "type": "video",
-                    "video": "urlToYoutube"
+                    "data": "urlToYoutube"
                 },
                 "1": {
                     "type": "text",
-                    "text": "Lorem ipsum"
+                    "data": "Lorem ipsum"
                 },
                 "2": {
                     "type": "audio",
-                    "audio": "url"
+                    "data": "url"
                 }
             ],
             "tests": [
