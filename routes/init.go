@@ -1,14 +1,15 @@
 package routes
 
 import (
+	"net/http"
 	"github.com/julienschmidt/httprouter"
 	"github.com/valiknet18/EnglishCourseVlad/controllers"
 )
 
-func Init() *interface{} {
+func Init() http.Handler {
 	controllersMap := controllers.New()
 	router := httprouter.New()
-	router.Get("/api/users/", controllersMap["UsersController"].Index)
+	router.GET("/api/users/", controllersMap.UsersController.Index)
 
 	return router
 }

@@ -1,13 +1,17 @@
 package controllers
 
-type Controller interface {
+import (
+    // "fmt"
+)
 
+type Controllers struct {
+  UsersController *UsersController
 }
 
-var controllers map[string]Controller
+func New() Controllers {
+  var controllers Controllers
 
-func New() *controllers {
-  controllers["UsersController"] = NewUsersController()
-
+  controllers.UsersController = NewUsersController()
+  
   return controllers
 }
