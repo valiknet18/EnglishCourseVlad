@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+		"fmt"
+		"net/http"
+		"github.com/valiknet18/EnglishCourseVlad/routes"
+)
 
 func main() {
-	fmt.Println("Hello world")
+		router := routes.Init();
+
+		http.ListenAndServe(":8000", router)
 }
